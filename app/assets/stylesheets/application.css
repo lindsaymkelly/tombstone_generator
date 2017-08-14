@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+
+#tombstone-show {
+  height: 670px;
+  width: 640px;
+  border: 1px solid black;
+}
+
+#acquiror-logo {
+  height: 215px;
+  width: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-left: 45px;
+  padding-right: 45px;
+  /*padding-top: 65px;
+  padding-bottom: 50px;*/
+}
+
+#acquiror-logo img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#acquired-bar {
+  width: 640px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+
+#acquired-logo {
+  width: 550px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+#acquired-logo img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}

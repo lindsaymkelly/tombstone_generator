@@ -1,0 +1,22 @@
+<h1> This is the show page </h1>
+
+<div id="tombstone-show">
+  <div id="acquiror-logo">
+    <%= image_tag @tombstone.acquiror_logo.url(:medium)%>
+  </div>
+  <div id="acquired-bar">
+    <p><%= @tombstone.acquired_text %></p>
+  </div>
+  <div id="acquired-logo">
+    <%= image_tag @tombstone.acquired_logo.url(:medium)%>
+  </div>
+  <div id="represent">
+    <p><%= @tombstone.representation %></p>
+  </div>
+  <div id="transaction-year">
+    <p><%= @tombstone.year %></p>
+  </div>
+  <div id="conduct">
+    <p><%= @tombstone.conducted_text %></p>
+  </div>
+</div>

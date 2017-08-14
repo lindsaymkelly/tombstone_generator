@@ -1,0 +1,26 @@
+<div>
+  <h1> Create A New Tombstone </h1>
+</div>
+<div>
+  <%= form_for @tombstone, url: { action: "create" } do |f| %>
+    <%=f.label "Attach Acquiring Company's Logo:" %>
+    <%=f.file_field :acquiror_logo %>
+    <br>
+    <%=f.label "Middle Text Bar (ex: ACQUIRED:)" %>
+    <%=f.text_field :acquired_text %>
+    <br>
+    <%= f.label "Attach Acquired Company's Logo:" %>
+    <%=f.file_field :acquired_logo %>
+    <br>
+    <%=f.label "Year of Transaction:" %>
+    <%=f.text_field :year %>
+    <br>
+    <%=f.label "Represented By:" %>
+    <%=f.text_field :representation %>
+    <br>
+    <%=f.label "Bottom Text (ex: Conducted through)" %>
+    <%=f.text_field :conducted_text %>
+    <br>
+    <%=f.submit "Create New Tombstone" %>
+  <% end %>
+</div>
