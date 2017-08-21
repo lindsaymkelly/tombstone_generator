@@ -1,22 +1,24 @@
-<h1> This is the show page </h1>
+<h1> Your New Tombstone: </h1>
 
 <div id="tombstone-show">
   <div id="acquiror-logo">
     <%= image_tag @tombstone.acquiror_logo.url(:medium)%>
   </div>
   <div id="acquired-bar">
-    <p><%= @tombstone.acquired_text %></p>
+    <p><%= @tombstone.acquired_text.upcase %></p>
   </div>
   <div id="acquired-logo">
     <%= image_tag @tombstone.acquired_logo.url(:medium)%>
   </div>
   <div id="represent">
-    <p><%= @tombstone.representation %></p>
+    <p><%= @tombstone.representation.upcase %></p>
   </div>
   <div id="transaction-year">
-    <p><%= @tombstone.year %></p>
+    <p><%= @tombstone.year.upcase %></p>
   </div>
   <div id="conduct">
-    <p><%= @tombstone.conducted_text %></p>
+    <div id="conduct-text" >
+      <p><%= @tombstone.conducted_text.upcase %></p>
+    </div>
   </div>
 </div>
