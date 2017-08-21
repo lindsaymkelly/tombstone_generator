@@ -1,4 +1,4 @@
-<h1> Your New Tombstone: </h1>
+<h1 style="text-align: center; font-family: 'futura-med';"> Your New Tombstone: </h1>
 
 <div id="tombstone-show">
   <div id="acquiror-logo">
@@ -22,3 +22,35 @@
     </div>
   </div>
 </div>
+<div id="button-div">
+  <input style="font-family: 'futura-light';" type="button" class = "button" id="btnSave" value="Save PNG"/>
+  <%= link_to "Edit Tombstone", edit_tombstone_path(@tombstone), :class => "button" %>
+  <%= link_to "Create New Tombstone", root_path, :class => "button" %>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(function() { 
+      $("#btnSave").click(function() { 
+          html2canvas($("#tombstone-show"), {
+              onrendered: function(canvas) {
+                  var url = canvas.toDataURL ();
+                  var date = Date.now()
+                  var fileName = ["tombstone_", date, ".png"].join(" ");
+                  $("<a>", {
+                    href: url,
+                    download: fileName
+                  })
+                  .on("click", function() {$(this).remove()})
+                  .appendTo("body")[0].click()
+                  // theCanvas = canvas;
+                  // // document.body.appendChild(canvas);
+
+                  // Canvas2Image.saveAsPNG(canvas); 
+                  // $("#img-out").append(canvas);
+              }
+          });
+      });
+  });
+});
+</script>

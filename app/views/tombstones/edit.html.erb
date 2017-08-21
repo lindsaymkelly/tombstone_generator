@@ -1,16 +1,20 @@
 <body style="font-family: 'futura-light'; font-size: 1.3em;">
     <div style="text-align: center;">
-      <h1> Create A New Tombstone </h1>
+      <h1> Edit A Tombstone </h1>
     </div>
     <div style="padding-left: 10%;">
-      <%= form_for @tombstone, url: { action: "create" } do |f| %>
-        <%=f.label "Attach Acquiring Company's Logo:" %>
+      <%= form_for @tombstone, url: tombstone_path(@tombstone), method: 'put' do |f| %>
+        <% if @tombstone.acquiror_logo.exists? %>
+          <%= image_tag @tombstone.acquiror_logo.url(:thumb) %>
+        <% end %>
         <%=f.file_field :acquiror_logo %>
         <br>
         <%=f.label "Middle Text Bar (ex: ACQUIRED:)" %>
         <%=f.text_field :acquired_text %>
         <br>
-        <%= f.label "Attach Acquired Company's Logo:" %>
+        <% if @tombstone.acquired_logo.exists? %>
+          <%= image_tag @tombstone.acquired_logo.url(:thumb) %>
+        <% end %>
         <%=f.file_field :acquired_logo %>
         <br>
         <%=f.label "Year of Transaction:" %>
@@ -23,7 +27,7 @@
         <%=f.text_field :conducted_text %>
         <br>
         <div style="padding-top: 2%;">
-            <%=f.submit "Create New Tombstone", :class => 'button'  %>
+            <%=f.submit "Edit Tombstone", :class => 'button'  %>
         </div>
       <% end %>
     </div>

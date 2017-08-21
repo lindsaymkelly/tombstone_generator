@@ -34,6 +34,7 @@ gem 'paperclip-cloudinary'
 gem 'annotate', require: false
 gem 'dotenv-rails'
 gem 'rails_12factor', group: :production
+gem 'imgkit'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

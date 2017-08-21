@@ -19,11 +19,17 @@ class TombstonesController < ApplicationController
   end
 
   def edit
-    # depending on time
+    @tombstone = Tombstone.find(params[:id])
   end
 
   def update
-    # depending on time
+    @tombstone = Tombstone.find(params[:id])
+    if @tombstone.update(tombstone_params)
+      redirect_to @tombstone
+    else 
+      @errors = @tombstone.errors.full_messages
+      render 'edit'
+    end
   end
 
   private
