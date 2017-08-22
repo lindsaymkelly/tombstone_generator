@@ -35,6 +35,7 @@ gem 'annotate', require: false
 gem 'dotenv-rails'
 gem 'rails_12factor', group: :production
 gem 'imgkit'
+gem 'client_side_validations'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
