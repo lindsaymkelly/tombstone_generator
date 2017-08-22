@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hkxmv7wrh
+  api_key: '421449232998362'
+  api_secret: iCGrIylYuAdbccWSvxqzTtkw1Jo
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hkxmv7wrh
+  api_key: '421449232998362'
+  api_secret: iCGrIylYuAdbccWSvxqzTtkw1Jo
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hkxmv7wrh
+  api_key: '421449232998362'
+  api_secret: iCGrIylYuAdbccWSvxqzTtkw1Jo
+  enhance_image_tag: true
+  static_image_support: false
