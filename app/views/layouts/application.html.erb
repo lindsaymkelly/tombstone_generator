@@ -14,7 +14,7 @@
 
   <body>
     <% if @errors%>
-      <ul class="list-unstyled">
+      <ul class="list-unstyled error-list">
       <% @errors.each do |e| %>
         <li><%= e %></li>
       <% end %>

@@ -5,11 +5,12 @@ class TombstonesController < ApplicationController
   end
 
   def create
-    @tombstone = Tombstone.new(tombstone_params)
-    if @tombstone.save
+    begin 
+      @tombstone = Tombstone.new(tombstone_params)
+      @tombstone.save!
       redirect_to @tombstone
-    else
-      @errors = @tombstone.errors.full_messages
+    rescue => e 
+      @errors = [e]
       render 'new'
     end
   end
@@ -23,11 +24,12 @@ class TombstonesController < ApplicationController
   end
 
   def update
-    @tombstone = Tombstone.find(params[:id])
-    if @tombstone.update(tombstone_params)
+    begin 
+      @tombstone = Tombstone.find(params[:id])
+      @tombstone.update(tombstone_params)
       redirect_to @tombstone
-    else 
-      @errors = @tombstone.errors.full_messages
+    rescue => e 
+      @errors = [e]
       render 'edit'
     end
   end

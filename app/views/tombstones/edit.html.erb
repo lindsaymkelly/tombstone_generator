@@ -3,7 +3,7 @@
       <h1> Edit A Tombstone </h1>
     </div>
     <div style="padding-left: 10%;">
-      <%= form_for @tombstone, url: tombstone_path(@tombstone), method: 'put' do |f| %>
+      <%= form_for @tombstone, url: tombstone_path(@tombstone), method: 'put', validate: true do |f| %>
         <% if @tombstone.acquiror_logo.exists? %>
           <%= image_tag @tombstone.acquiror_logo.url(:thumb) %>
         <% end %>
